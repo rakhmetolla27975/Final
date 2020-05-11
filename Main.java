@@ -8,7 +8,7 @@ public class Main {
 
     public static void connect(PackageData pd){
         try{
-            Socket socket = new Socket("127.0.0.1", 5555);
+            Socket socket = new Socket("127.0.0.1", 2002);
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
 
@@ -18,11 +18,7 @@ public class Main {
                     outputStream.writeObject(pd);
                     PackageData InffromSer = (PackageData)inputStream.readObject();
                     ArrayList<Addinformation> arrayListfromSer = InffromSer.getBinformation();
-                    String s = "";
-                    for (int i = 0; i < arrayListfromSer.size(); i++) {
-                        s += arrayListfromSer.get(i) + "\n";
-                    }
-                    result.text.append(s);
+                    result.text.append(String.valueOf(arrayListfromSer));
                 }
                 else if(pd.getOperType().equals("BPROJECT")){
                     PackageData InffromSer = (PackageData)inputStream.readObject();
@@ -36,9 +32,6 @@ public class Main {
                 }
                 else if (pd.getOperType().equals("DELETE")){
                     outputStream.writeObject(pd);
-
-
-
                 }
 
                 inputStream.close();

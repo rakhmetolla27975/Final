@@ -23,6 +23,7 @@ private JButton addButton;
 private JButton resultButton;
  private JButton backButton;
 
+
 public add(){
     setSize(700,700);
     setLayout(null);
@@ -90,6 +91,7 @@ add(onepriceflourText);
             String onepriceoil = onepriceoilText.getText();
             String onepricewater = onepricewaterText.getText();
             String onepriceenergy = onepriceenergyText.getText();
+
 
             Addinformation addinformation = new Addinformation(null, number, onepriceflour, onepriceyeast, onepriceoil, onepricewater, onepriceenergy);
             PackageData pd = new PackageData("ADD", addinformation);

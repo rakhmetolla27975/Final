@@ -24,25 +24,27 @@ private Connection connection;
     public void addInf(Addinformation addinformation){
     this.addinformation = addinformation;
     try{
-        PreparedStatement statement = connection.prepareStatement("" + "INSERT INTO bread (id, number, onepriceflour, onepriceyeast, onepriceoil, onepricewater, onepriceenergy, priceflour, priceyeast, priceoil, pricewater, priceenergy, totaldirectcosts, overhead, generalexpenses, profit, price, allprice)" + "VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        PreparedStatement statement = connection.prepareStatement("" + "INSERT INTO bread (id, username, password, number, onepriceflour, onepriceyeast, onepriceoil, onepricewater, onepriceenergy, priceflour, priceyeast, priceoil, pricewater, priceenergy, totaldirectcosts, overhead, generalexpenses, profit, price, allprice)" + "VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
-        statement.setString(1,addinformation.getNumber());
-        statement.setString(2,addinformation.getOnepriceflour());
-        statement.setString(3,addinformation.getOnepriceyeast());
-        statement.setString(4,addinformation.getOnepriceoil());
-        statement.setString(5,addinformation.getOnepricewater());
-        statement.setString(6,addinformation.getOnepriceenergy());
-        statement.setString(7,addinformation.getPriceflour());
-        statement.setString(8,addinformation.getPriceyeast());
-        statement.setString(9, addinformation.getPriceoil());
-        statement.setString(10,addinformation.getPricewater());
-        statement.setString(11,addinformation.getPriceenergy());
-        statement.setString(12, addinformation.getTotaldirectcosts());
-        statement.setString(13,addinformation.getOverhead());
-        statement.setString(14,addinformation.getGeneralexpenses());
-        statement.setString(15, addinformation.getProfit());
-        statement.setString(16,addinformation.getPrice());
-        statement.setString(17,addinformation.getAllprice());
+        statement.setString(1,addinformation.getUsername());
+        statement.setString(2,addinformation.getPassword());
+        statement.setString(3,addinformation.getNumber());
+        statement.setString(4,addinformation.getOnepriceflour());
+        statement.setString(5,addinformation.getOnepriceyeast());
+        statement.setString(6,addinformation.getOnepriceoil());
+        statement.setString(7,addinformation.getOnepricewater());
+        statement.setString(8,addinformation.getOnepriceenergy());
+        statement.setString(9,addinformation.getPriceflour());
+        statement.setString(10,addinformation.getPriceyeast());
+        statement.setString(11, addinformation.getPriceoil());
+        statement.setString(12,addinformation.getPricewater());
+        statement.setString(13,addinformation.getPriceenergy());
+        statement.setString(14, addinformation.getTotaldirectcosts());
+        statement.setString(15,addinformation.getOverhead());
+        statement.setString(16,addinformation.getGeneralexpenses());
+        statement.setString(17, addinformation.getProfit());
+        statement.setString(18,addinformation.getPrice());
+        statement.setString(19,addinformation.getAllprice());
         statement.executeUpdate();
 
         statement.close();
